@@ -4,9 +4,12 @@
 
 It provides a collection of lightweight command-line tools in a single executable.
 
+> **Note:** box is a Windows-only project. It relies on the Windows API and is designed specifically for the Windows platform.
+
 ## Features
 
 - Native Windows implementation
+- Windows API based
 - Unicode-aware command-line arguments
 - UTF-8 output support
 - Single executable
@@ -18,10 +21,12 @@ It provides a collection of lightweight command-line tools in a single executabl
 
 ### Requirements
 
-- Windows
 - GCC
 - GNU Make
-- MSYS2 UCRT64
+- A C11-compatible compiler
+- Windows-compatible build environment
+
+For Windows, **MSYS2 UCRT64** is recommended.
 
 Build the project with:
 
@@ -41,7 +46,9 @@ Use `box help` to see the available commands.
 
 box aims to remain small, simple, and understandable.
 
-The project uses Windows-native APIs where appropriate and handles command-line arguments through `wmain()` and wide-character APIs for proper Unicode support.
+The project is designed specifically for Windows and uses Windows APIs for filesystem, console, and system operations where appropriate.
+
+Command-line arguments are handled through `wmain()` and wide-character Windows APIs for proper Unicode support.
 
 Source files are automatically discovered by the Makefile, so adding a new command does not require modifying the build configuration.
 
