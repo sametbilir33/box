@@ -1,0 +1,64 @@
+# box
+
+**box** is a small, Windows-native command-line toolbox inspired by Unix utilities.
+
+It provides a collection of lightweight command-line tools in a single executable.
+
+## Features
+
+* Native Windows implementation
+* Unicode-aware command-line arguments
+* UTF-8 output support
+* Single executable
+* Lightweight and simple
+* Unix-like command interface
+* No external runtime dependencies
+
+## Build
+
+### Requirements
+
+* Windows
+* GCC
+* GNU Make
+* MSYS2 UCRT64
+
+Build the project with:
+
+```bash
+make
+```
+
+To remove build files:
+
+```bash
+make clean
+```
+
+## Usage
+
+```text
+box <command> [arguments...]
+```
+
+To see the available commands:
+
+```bash
+box help
+```
+
+## Design
+
+box aims to remain small, simple, and understandable.
+
+The project uses Windows-native APIs where appropriate and handles command-line arguments through `wmain()` and wide-character APIs for proper Unicode support.
+
+Source files are automatically discovered by the Makefile, so adding a new command does not require modifying the build configuration.
+
+## License
+
+box is licensed under the **GNU General Public License v3.0**.
+
+See the `LICENSE` file for the complete license text.
+
+Copyright (C) 2026 Samet Bilir
